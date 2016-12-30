@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F30FE4421E1714DD009456FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4411E1714DD009456FA /* AppDelegate.swift */; };
+		F30FE4441E1714DD009456FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4431E1714DD009456FA /* ViewController.swift */; };
+		F30FE4471E1714DD009456FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30FE4451E1714DD009456FA /* Main.storyboard */; };
+		F30FE4491E1714DD009456FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30FE4481E1714DD009456FA /* Assets.xcassets */; };
+		F30FE44C1E1714DD009456FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30FE44A1E1714DD009456FA /* LaunchScreen.storyboard */; };
+		F30FE4571E1714DD009456FA /* Self_DestructTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4561E1714DD009456FA /* Self_DestructTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F30FE4531E1714DD009456FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F30FE4361E1714DC009456FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F30FE43D1E1714DC009456FA;
+			remoteInfo = "Self Destruct";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F30FE43E1E1714DD009456FA /* Self Destruct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Self Destruct.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30FE4411E1714DD009456FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F30FE4431E1714DD009456FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F30FE4461E1714DD009456FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F30FE4481E1714DD009456FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F30FE44B1E1714DD009456FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F30FE44D1E1714DD009456FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F30FE4521E1714DD009456FA /* Self DestructTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Self DestructTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30FE4561E1714DD009456FA /* Self_DestructTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Self_DestructTests.swift; sourceTree = "<group>"; };
+		F30FE4581E1714DD009456FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F30FE43B1E1714DC009456FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F30FE44F1E1714DD009456FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F30FE4351E1714DC009456FA = {
+			isa = PBXGroup;
+			children = (
+				F30FE4401E1714DD009456FA /* Self Destruct */,
+				F30FE4551E1714DD009456FA /* Self DestructTests */,
+				F30FE43F1E1714DD009456FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F30FE43F1E1714DD009456FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F30FE43E1E1714DD009456FA /* Self Destruct.app */,
+				F30FE4521E1714DD009456FA /* Self DestructTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F30FE4401E1714DD009456FA /* Self Destruct */ = {
+			isa = PBXGroup;
+			children = (
+				F30FE4411E1714DD009456FA /* AppDelegate.swift */,
+				F30FE4431E1714DD009456FA /* ViewController.swift */,
+				F30FE4451E1714DD009456FA /* Main.storyboard */,
+				F30FE4481E1714DD009456FA /* Assets.xcassets */,
+				F30FE44A1E1714DD009456FA /* LaunchScreen.storyboard */,
+				F30FE44D1E1714DD009456FA /* Info.plist */,
+			);
+			path = "Self Destruct";
+			sourceTree = "<group>";
+		};
+		F30FE4551E1714DD009456FA /* Self DestructTests */ = {
+			isa = PBXGroup;
+			children = (
+				F30FE4561E1714DD009456FA /* Self_DestructTests.swift */,
+				F30FE4581E1714DD009456FA /* Info.plist */,
+			);
+			path = "Self DestructTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F30FE43D1E1714DC009456FA /* Self Destruct */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F30FE45B1E1714DD009456FA /* Build configuration list for PBXNativeTarget "Self Destruct" */;
+			buildPhases = (
+				F30FE43A1E1714DC009456FA /* Sources */,
+				F30FE43B1E1714DC009456FA /* Frameworks */,
+				F30FE43C1E1714DC009456FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Self Destruct";
+			productName = "Self Destruct";
+			productReference = F30FE43E1E1714DD009456FA /* Self Destruct.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F30FE4511E1714DD009456FA /* Self DestructTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F30FE45E1E1714DD009456FA /* Build configuration list for PBXNativeTarget "Self DestructTests" */;
+			buildPhases = (
+				F30FE44E1E1714DD009456FA /* Sources */,
+				F30FE44F1E1714DD009456FA /* Frameworks */,
+				F30FE4501E1714DD009456FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F30FE4541E1714DD009456FA /* PBXTargetDependency */,
+			);
+			name = "Self DestructTests";
+			productName = "Self DestructTests";
+			productReference = F30FE4521E1714DD009456FA /* Self DestructTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F30FE4361E1714DC009456FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Remote Hamster";
+				TargetAttributes = {
+					F30FE43D1E1714DC009456FA = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = V3WZ465XFR;
+						ProvisioningStyle = Automatic;
+					};
+					F30FE4511E1714DD009456FA = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = V3WZ465XFR;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F30FE43D1E1714DC009456FA;
+					};
+				};
+			};
+			buildConfigurationList = F30FE4391E1714DC009456FA /* Build configuration list for PBXProject "Self Destruct" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F30FE4351E1714DC009456FA;
+			productRefGroup = F30FE43F1E1714DD009456FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F30FE43D1E1714DC009456FA /* Self Destruct */,
+				F30FE4511E1714DD009456FA /* Self DestructTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F30FE43C1E1714DC009456FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F30FE44C1E1714DD009456FA /* LaunchScreen.storyboard in Resources */,
+				F30FE4491E1714DD009456FA /* Assets.xcassets in Resources */,
+				F30FE4471E1714DD009456FA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F30FE4501E1714DD009456FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F30FE43A1E1714DC009456FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F30FE4441E1714DD009456FA /* ViewController.swift in Sources */,
+				F30FE4421E1714DD009456FA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F30FE44E1E1714DD009456FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F30FE4571E1714DD009456FA /* Self_DestructTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F30FE4541E1714DD009456FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F30FE43D1E1714DC009456FA /* Self Destruct */;
+			targetProxy = F30FE4531E1714DD009456FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F30FE4451E1714DD009456FA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F30FE4461E1714DD009456FA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F30FE44A1E1714DD009456FA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F30FE44B1E1714DD009456FA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F30FE4591E1714DD009456FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F30FE45A1E1714DD009456FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F30FE45C1E1714DD009456FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V3WZ465XFR;
+				INFOPLIST_FILE = "Self Destruct/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.remoteHamster.Self-Destruct";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F30FE45D1E1714DD009456FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V3WZ465XFR;
+				INFOPLIST_FILE = "Self Destruct/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.remoteHamster.Self-Destruct";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F30FE45F1E1714DD009456FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = V3WZ465XFR;
+				INFOPLIST_FILE = "Self DestructTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.remoteHamster.Self-DestructTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Self Destruct.app/Self Destruct";
+			};
+			name = Debug;
+		};
+		F30FE4601E1714DD009456FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = V3WZ465XFR;
+				INFOPLIST_FILE = "Self DestructTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.remoteHamster.Self-DestructTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Self Destruct.app/Self Destruct";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F30FE4391E1714DC009456FA /* Build configuration list for PBXProject "Self Destruct" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F30FE4591E1714DD009456FA /* Debug */,
+				F30FE45A1E1714DD009456FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F30FE45B1E1714DD009456FA /* Build configuration list for PBXNativeTarget "Self Destruct" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F30FE45C1E1714DD009456FA /* Debug */,
+				F30FE45D1E1714DD009456FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F30FE45E1E1714DD009456FA /* Build configuration list for PBXNativeTarget "Self DestructTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F30FE45F1E1714DD009456FA /* Debug */,
+				F30FE4601E1714DD009456FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F30FE4361E1714DC009456FA /* Project object */;
+}
