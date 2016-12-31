@@ -13,6 +13,8 @@
 		F30FE4491E1714DD009456FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30FE4481E1714DD009456FA /* Assets.xcassets */; };
 		F30FE44C1E1714DD009456FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30FE44A1E1714DD009456FA /* LaunchScreen.storyboard */; };
 		F30FE4571E1714DD009456FA /* Self_DestructTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4561E1714DD009456FA /* Self_DestructTests.swift */; };
+		F30FE4631E1736A5009456FA /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4621E1736A5009456FA /* LoginController.swift */; };
+		F30FE4661E173C7B009456FA /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4651E173C7B009456FA /* extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		F30FE4521E1714DD009456FA /* Self DestructTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Self DestructTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30FE4561E1714DD009456FA /* Self_DestructTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Self_DestructTests.swift; sourceTree = "<group>"; };
 		F30FE4581E1714DD009456FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F30FE4621E1736A5009456FA /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		F30FE4651E173C7B009456FA /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,9 @@
 		F30FE4401E1714DD009456FA /* Self Destruct */ = {
 			isa = PBXGroup;
 			children = (
+				F30FE4641E173C6F009456FA /* Extensions */,
+				F30FE4611E173653009456FA /* Controllers */,
 				F30FE4411E1714DD009456FA /* AppDelegate.swift */,
-				F30FE4431E1714DD009456FA /* ViewController.swift */,
 				F30FE4451E1714DD009456FA /* Main.storyboard */,
 				F30FE4481E1714DD009456FA /* Assets.xcassets */,
 				F30FE44A1E1714DD009456FA /* LaunchScreen.storyboard */,
@@ -94,6 +99,23 @@
 				F30FE4581E1714DD009456FA /* Info.plist */,
 			);
 			path = "Self DestructTests";
+			sourceTree = "<group>";
+		};
+		F30FE4611E173653009456FA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F30FE4431E1714DD009456FA /* ViewController.swift */,
+				F30FE4621E1736A5009456FA /* LoginController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F30FE4641E173C6F009456FA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F30FE4651E173C7B009456FA /* extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +224,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F30FE4441E1714DD009456FA /* ViewController.swift in Sources */,
+				F30FE4631E1736A5009456FA /* LoginController.swift in Sources */,
 				F30FE4421E1714DD009456FA /* AppDelegate.swift in Sources */,
+				F30FE4661E173C7B009456FA /* extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +434,7 @@
 				F30FE45D1E1714DD009456FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F30FE45E1E1714DD009456FA /* Build configuration list for PBXNativeTarget "Self DestructTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +443,7 @@
 				F30FE4601E1714DD009456FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
