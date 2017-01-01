@@ -21,6 +21,7 @@ class LoginView: UIView {
         imageView.image = UIImage(named: "lock")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     

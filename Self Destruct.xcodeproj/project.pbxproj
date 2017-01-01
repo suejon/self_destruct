@@ -19,6 +19,7 @@
 		F30FE4631E1736A5009456FA /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4621E1736A5009456FA /* LoginController.swift */; };
 		F30FE4661E173C7B009456FA /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4651E173C7B009456FA /* extensions.swift */; };
 		F347068A1E189D2C00243C6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F34706891E189D2C00243C6A /* GoogleService-Info.plist */; };
+		F3B33AD51E18FA370018C181 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B33AD41E18FA370018C181 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		F30FE4621E1736A5009456FA /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F30FE4651E173C7B009456FA /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		F34706891E189D2C00243C6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F3B33AD41E18FA370018C181 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		F30FE4401E1714DD009456FA /* Self Destruct */ = {
 			isa = PBXGroup;
 			children = (
+				F3B33AD31E18FA270018C181 /* Models */,
 				F307C8C21E1759EE0040C64A /* Views */,
 				F30FE4641E173C6F009456FA /* Extensions */,
 				F30FE4611E173653009456FA /* Controllers */,
@@ -162,6 +165,14 @@
 				F30FE4651E173C7B009456FA /* extensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F3B33AD31E18FA270018C181 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3B33AD41E18FA370018C181 /* User.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +382,7 @@
 			files = (
 				F30FE4441E1714DD009456FA /* ViewController.swift in Sources */,
 				F30FE4631E1736A5009456FA /* LoginController.swift in Sources */,
+				F3B33AD51E18FA370018C181 /* User.swift in Sources */,
 				F30FE4421E1714DD009456FA /* AppDelegate.swift in Sources */,
 				F307C8C11E1759710040C64A /* LoginView.swift in Sources */,
 				F30FE4661E173C7B009456FA /* extensions.swift in Sources */,
