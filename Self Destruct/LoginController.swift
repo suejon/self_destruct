@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, UITextFieldDelegate {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         get {
@@ -19,6 +19,18 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.green
+        setupView()
+    }
+    
+    func setupView() {
+        let loginView = LoginView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        view = loginView
+        loginView.usernameTextfield.delegate = self
+        loginView.usernameTextfield.tag = 0
+        loginView.emailTextfield.delegate = self
+        loginView.emailTextfield.tag = 1
+        loginView.passwordTextfield.delegate = self
+        loginView.passwordTextfield.tag = 2
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,15 +38,13 @@ class LoginController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextTextField.becomeFirstResponder()
+        } else {
+        textField.resignFirstResponder()
+        }
+        return true
     }
-    */
-
+    
 }
