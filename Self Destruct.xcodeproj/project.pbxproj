@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8378D8BE65F3DBD3FFE5F528 /* Pods_Self_DestructTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420AAFE685AE5E65FEBBDD65 /* Pods_Self_DestructTests.framework */; };
+		A96C1B5ACAE4B64237334412 /* Pods_Self_Destruct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE76078291EEF00367E29CF /* Pods_Self_Destruct.framework */; };
 		F307C8C11E1759710040C64A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F307C8C01E1759710040C64A /* LoginView.swift */; };
 		F30FE4421E1714DD009456FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4411E1714DD009456FA /* AppDelegate.swift */; };
 		F30FE4441E1714DD009456FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4431E1714DD009456FA /* ViewController.swift */; };
@@ -16,6 +18,7 @@
 		F30FE4571E1714DD009456FA /* Self_DestructTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4561E1714DD009456FA /* Self_DestructTests.swift */; };
 		F30FE4631E1736A5009456FA /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4621E1736A5009456FA /* LoginController.swift */; };
 		F30FE4661E173C7B009456FA /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FE4651E173C7B009456FA /* extensions.swift */; };
+		F347068A1E189D2C00243C6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F34706891E189D2C00243C6A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FA9E0E50BAB779574139D49 /* Pods-Self Destruct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self Destruct.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Self Destruct/Pods-Self Destruct.debug.xcconfig"; sourceTree = "<group>"; };
+		420AAFE685AE5E65FEBBDD65 /* Pods_Self_DestructTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_DestructTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BA131E4001A2B1635FF6E1A /* Pods-Self Destruct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self Destruct.release.xcconfig"; path = "Pods/Target Support Files/Pods-Self Destruct/Pods-Self Destruct.release.xcconfig"; sourceTree = "<group>"; };
+		8AA1E8D11A805D5DB4CFE655 /* Pods-Self DestructTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self DestructTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Self DestructTests/Pods-Self DestructTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E0A026E75E3357B1B399376 /* Pods-Self DestructTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Self DestructTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Self DestructTests/Pods-Self DestructTests.release.xcconfig"; sourceTree = "<group>"; };
+		DBE76078291EEF00367E29CF /* Pods_Self_Destruct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Self_Destruct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F307C8C01E1759710040C64A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F30FE43E1E1714DD009456FA /* Self Destruct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Self Destruct.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30FE4411E1714DD009456FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +51,7 @@
 		F30FE4581E1714DD009456FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F30FE4621E1736A5009456FA /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F30FE4651E173C7B009456FA /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		F34706891E189D2C00243C6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96C1B5ACAE4B64237334412 /* Pods_Self_Destruct.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +67,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8378D8BE65F3DBD3FFE5F528 /* Pods_Self_DestructTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46856088FDA687130C0A188A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBE76078291EEF00367E29CF /* Pods_Self_Destruct.framework */,
+				420AAFE685AE5E65FEBBDD65 /* Pods_Self_DestructTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBE49F6775EEAEF94D288F33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0FA9E0E50BAB779574139D49 /* Pods-Self Destruct.debug.xcconfig */,
+				4BA131E4001A2B1635FF6E1A /* Pods-Self Destruct.release.xcconfig */,
+				8AA1E8D11A805D5DB4CFE655 /* Pods-Self DestructTests.debug.xcconfig */,
+				8E0A026E75E3357B1B399376 /* Pods-Self DestructTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F307C8C21E1759EE0040C64A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +108,8 @@
 				F30FE4401E1714DD009456FA /* Self Destruct */,
 				F30FE4551E1714DD009456FA /* Self DestructTests */,
 				F30FE43F1E1714DD009456FA /* Products */,
+				DBE49F6775EEAEF94D288F33 /* Pods */,
+				46856088FDA687130C0A188A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +133,7 @@
 				F30FE4481E1714DD009456FA /* Assets.xcassets */,
 				F30FE44A1E1714DD009456FA /* LaunchScreen.storyboard */,
 				F30FE44D1E1714DD009456FA /* Info.plist */,
+				F34706891E189D2C00243C6A /* GoogleService-Info.plist */,
 			);
 			path = "Self Destruct";
 			sourceTree = "<group>";
@@ -136,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F30FE45B1E1714DD009456FA /* Build configuration list for PBXNativeTarget "Self Destruct" */;
 			buildPhases = (
+				40F5E9E9CAAD539700C381CE /* 📦 Check Pods Manifest.lock */,
 				F30FE43A1E1714DC009456FA /* Sources */,
 				F30FE43B1E1714DC009456FA /* Frameworks */,
 				F30FE43C1E1714DC009456FA /* Resources */,
+				DE8E4B1D7C9EE1D7245FA866 /* 📦 Embed Pods Frameworks */,
+				42164249DD49F45923A3E322 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,9 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F30FE45E1E1714DD009456FA /* Build configuration list for PBXNativeTarget "Self DestructTests" */;
 			buildPhases = (
+				386127F5D14DEA8471B9B8B5 /* 📦 Check Pods Manifest.lock */,
 				F30FE44E1E1714DD009456FA /* Sources */,
 				F30FE44F1E1714DD009456FA /* Frameworks */,
 				F30FE4501E1714DD009456FA /* Resources */,
+				C3C94DA68DA7F53011EBC71A /* 📦 Embed Pods Frameworks */,
+				557DC4B2B534E25391743DC3 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F30FE44C1E1714DD009456FA /* LaunchScreen.storyboard in Resources */,
+				F347068A1E189D2C00243C6A /* GoogleService-Info.plist in Resources */,
 				F30FE4491E1714DD009456FA /* Assets.xcassets in Resources */,
 				F30FE4471E1714DD009456FA /* Main.storyboard in Resources */,
 			);
@@ -228,6 +270,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		386127F5D14DEA8471B9B8B5 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		40F5E9E9CAAD539700C381CE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		42164249DD49F45923A3E322 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Self Destruct/Pods-Self Destruct-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		557DC4B2B534E25391743DC3 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Self DestructTests/Pods-Self DestructTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3C94DA68DA7F53011EBC71A /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Self DestructTests/Pods-Self DestructTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE8E4B1D7C9EE1D7245FA866 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Self Destruct/Pods-Self Destruct-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F30FE43A1E1714DC009456FA /* Sources */ = {
@@ -373,6 +508,7 @@
 		};
 		F30FE45C1E1714DD009456FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FA9E0E50BAB779574139D49 /* Pods-Self Destruct.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V3WZ465XFR;
@@ -386,6 +522,7 @@
 		};
 		F30FE45D1E1714DD009456FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BA131E4001A2B1635FF6E1A /* Pods-Self Destruct.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V3WZ465XFR;
@@ -399,6 +536,7 @@
 		};
 		F30FE45F1E1714DD009456FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AA1E8D11A805D5DB4CFE655 /* Pods-Self DestructTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -414,6 +552,7 @@
 		};
 		F30FE4601E1714DD009456FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E0A026E75E3357B1B399376 /* Pods-Self DestructTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
