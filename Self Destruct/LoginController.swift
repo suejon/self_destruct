@@ -19,6 +19,8 @@ class LoginController: UIViewController, UITextFieldDelegate, UIImagePickerContr
         }
     }
     
+    var messagesController: MessagesController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.green
@@ -67,10 +69,26 @@ class LoginController: UIViewController, UITextFieldDelegate, UIImagePickerContr
     func handleLoginRegister() {
         if loginView?.loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             // handle login
+            guard let email = loginView?.emailTextfield.text, let password = loginView?.passwordTextfield.text else {
+                print("Form contains invalid input")
+                return
+            }
+            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+                if error != nil {
+                    print("Failed to sign in: ", error!)
+                    return
+                }
+//                print("Successful login!")
+                // setup user for the messages controller
+                self.messagesController?.fetchUserAndSetupNavBarTitle()
+                self.dismiss(animated: true, completion: nil)
+            })
+            
             
         } else {
             // handle register
             guard let name = loginView?.usernameTextfield.text, let email = loginView?.emailTextfield.text, let password = loginView?.passwordTextfield.text else {
+                print("Form contains invalid input")
                 return
             }
             FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
