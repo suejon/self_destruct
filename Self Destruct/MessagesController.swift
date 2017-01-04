@@ -23,7 +23,6 @@ class MessagesController: UITableViewController {
     
     func checkIfUserIsLoggedIn() {
         if FIRAuth.auth()?.currentUser?.uid == nil {
-            // log out
             DispatchQueue.main.async {
                 self.handleLogout()
             }
