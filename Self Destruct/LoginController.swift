@@ -78,7 +78,6 @@ class LoginController: UIViewController, UITextFieldDelegate, UIImagePickerContr
                     print("Failed to sign in: ", error!)
                     return
                 }
-//                print("Successful login!")
                 // setup user for the messages controller
                 self.messagesController?.fetchUserAndSetupNavBarTitle()
                 self.dismiss(animated: true, completion: nil)

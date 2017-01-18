@@ -60,6 +60,12 @@ class MessagesController: UITableViewController {
         })
     }
     
+    func showChatControllerFor(user: User) {
+        let chatLogController = ChatLogController(collectionViewLayout: UICollectionViewFlowLayout())
+        chatLogController.user = user
+        navigationController?.pushViewController(chatLogController, animated: true)
+    }
+    
     func setupNavBarWithUser(user: User) {
         
         let profileImageView: UIImageView = {
@@ -114,6 +120,7 @@ class MessagesController: UITableViewController {
     
     func handleNewMessage() {
         let newMessageController = NewMessageController()
+        newMessageController.messagesController = self
         let navigationController = UINavigationController(rootViewController: newMessageController)
         present(navigationController, animated: true, completion: nil)
     }

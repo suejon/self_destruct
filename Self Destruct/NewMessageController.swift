@@ -14,6 +14,7 @@ class NewMessageController: UITableViewController {
     
     var users = [User]()
     let cellId = "cellId"
+    var messagesController: MessagesController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +73,13 @@ class NewMessageController: UITableViewController {
             cell.profileImageView.loadImageUsingCacheWith(urlString: profileImageUrl)
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dismiss(animated: true) { 
+            let user = self.users[indexPath.row]
+            self.messagesController?.showChatControllerFor(user: user)
+        }
     }
 
 }
