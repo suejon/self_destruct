@@ -12,7 +12,11 @@ class ChatInputContainerView: UIView, UITextFieldDelegate {
     
     // MARK: - Properties
     
-    var chatLogController: ChatLogController?
+    var chatLogController: ChatLogController? {
+        didSet {
+            sendButton.addTarget(chatLogController, action: #selector(ChatLogController.sendMessage), for: .touchUpInside)
+        }
+    }
     
     lazy var inputTextField: UITextField = {
         let tf = UITextField()
