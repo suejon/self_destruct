@@ -7,13 +7,25 @@
 //
 
 import UIKit
-
+import Firebase
 
 class UserCell: UITableViewCell {
+    
+    // MARK: - Properties
+    var message: Message? {
+        didSet {
+            self.detailTextLabel?.text = message?.text
+            
+            if let seconds = message?.timestamp?.doubleValue {
+                timeLabel.text = formatDate(seconds: seconds)
+            }
+            loadNameAndProfileImage()
+        }
+    }
 
     let profileImageView: UIImageView = {
         let imageview = UIImageView()
-        imageview.layer.cornerRadius = 24
+        imageview.layer.cornerRadius = 17
         imageview.layer.masksToBounds = true
         imageview.contentMode = .scaleAspectFill
         imageview.translatesAutoresizingMaskIntoConstraints = false
@@ -54,5 +66,32 @@ class UserCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Private functions
+    
+    private func loadNameAndProfileImage() {
+        if let id = message?.chatPartnerId() {
+            let ref = FIRDatabase.database().reference().child("users").child(id)
+            ref.observe(.value, with: { (snapshot) in
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    self.textLabel?.text = dictionary["name"] as? String
+                    
+                    if let profileImageUrl = dictionary["profileImageUrl"] as? String {
+                        self.profileImageView.loadImageUsingCacheWith(urlString: profileImageUrl)
+                    }
+                }
+            })
+        }
+    }
+    
+    private func formatDate(seconds: Double) -> String {
+//        let date = NSDate(timeIntervalSince1970: date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm a"
+        let date = dateFormatter.string(from: Date(timeIntervalSince1970: seconds))
+        
+        print(date)
+        return date
     }
 }
