@@ -24,7 +24,9 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     override func viewDidLoad(){
         super.viewDidLoad()
         collectionView?.backgroundColor = .white
+        collectionView?.contentInset = UIEdgeInsetsMake(8, 0, 8, 0)
         collectionView?.register(ChatMessageCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.alwaysBounceVertical = true
     }
     
     lazy var inputContainerView: ChatInputContainerView = {
@@ -106,6 +108,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     private func estimateFrame(forText: String) -> CGRect {
         let size = CGSize(width: 200, height: 1000)
         let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        
         return NSString(string: forText).boundingRect(with: size, options: options, attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: 16)], context: nil)
     }
     
@@ -119,12 +122,18 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
             cell.textView.textColor = .white
             cell.bubbleViewRightAnchor?.isActive = true
             cell.bubbleViewLeftAnchor?.isActive = false
+            
+            cell.activityIndicatorLeftAnchor?.isActive = false
+            cell.activityIndicatorRightAnchor?.isActive = true
         } else {
             cell.profileImageView.isHidden = false
             cell.bubbleView.backgroundColor = .lightGray
             cell.textView.textColor = .black
             cell.bubbleViewRightAnchor?.isActive = false
             cell.bubbleViewLeftAnchor?.isActive = true
+            
+            cell.activityIndicatorLeftAnchor?.isActive = true
+            cell.activityIndicatorRightAnchor?.isActive = false
         }
         
     }
@@ -137,8 +146,9 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ChatMessageCell
         let message = messages[indexPath.row]
+        cell.message = message
+        
         cell.chatLogController = self
-
         setupCell(cell: cell, message: message)
         
         if let text = message.text {
@@ -163,4 +173,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         return CGSize(width: width, height: height)
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView?.collectionViewLayout.invalidateLayout()
+    }
 }

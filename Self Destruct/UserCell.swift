@@ -90,8 +90,6 @@ class UserCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm a"
         let date = dateFormatter.string(from: Date(timeIntervalSince1970: seconds))
-        
-        print(date)
         return date
     }
 }
