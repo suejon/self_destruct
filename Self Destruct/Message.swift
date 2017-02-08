@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class Message: NSObject {
+    var id: String?
     var fromId: String?
     var toId: String?
     var text: String?
@@ -21,6 +22,7 @@ class Message: NSObject {
         toId = dictionary["toId"] as? String
         text = dictionary["text"] as? String
         timestamp = dictionary["timestamp"] as? NSNumber
+        id = dictionary["id"] as? String
     }
     
     // To find out who is the chat partner, check if the message's fromId matches the current logged in user.

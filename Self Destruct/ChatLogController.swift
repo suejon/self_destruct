@@ -18,7 +18,8 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         }
     }
     
-    var messages = [Message]()
+//    var messages = [Message]()
+    var messages = [String: Message]()
     let cellId = "cellId"
     
     override func viewDidLoad(){
@@ -67,7 +68,12 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
                     return
                 }
                 
-                self.messages.append(Message(dictionary: dictionary))
+//                self.messages.append(Message(dictionary: dictionary))
+                let message = Message(dictionary: dictionary)
+                if let msgId = message.id {
+                    self.messages[msgId] = message
+                }
+                
                 DispatchQueue.main.async {
                     self.collectionView?.reloadData()
                     let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
@@ -75,6 +81,63 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
                 }
             })
         })
+        
+        userMessagesRef.observe(.childRemoved, with: { (snapshot) in
+            self.messages.removeValue(forKey: snapshot.key)
+//            for i in 0..<self.messages.count {
+//                if self.messages[i].id == snapshot.key {
+//                    self.messages.remove(at: i)
+//                }
+//            }
+            self.collectionView?.reloadData()
+        })
+    }
+    
+    func beginTimer(messageCell: ChatMessageCell) {
+        
+        messageCell.timeBombView.isHidden = true
+        messageCell.activityIndicator.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+            messageCell.activityIndicator.stopAnimating()
+            
+            // Delete from database
+            if let message = messageCell.message {
+                guard let uid = FIRAuth.auth()?.currentUser?.uid else {
+                    return
+                }
+                // Remove from the messages pool
+                FIRDatabase.database().reference().child("messages").child(message.id!).removeValue(completionBlock: { (error, ref) in
+                    if error != nil {
+                        print("Failed to delete message from messages pool:", error!)
+                        return
+                    }
+                    self.messages.removeValue(forKey: message.id!)
+//                    for i in 0..<self.messages.count {
+//                        if self.messages[i].id == message.id {
+//                            self.messages.remove(at: i)
+//                        }
+//                    }
+                    self.collectionView?.reloadData()
+                })
+                let userMessagesRef = FIRDatabase.database().reference().child("user-messages")
+                // Remove from current
+                userMessagesRef.child(uid).child(message.chatPartnerId()!).child(message.id!).removeValue(completionBlock: { (error, ref) in
+                    if error != nil {
+                        print("Failed to delete message in sender pool:", error!)
+                        return
+                    }
+                })
+                
+                // Remove from the other
+                userMessagesRef.child(message.chatPartnerId()!).child(uid).child(message.id!).removeValue(completionBlock: { (error, ref) in
+                    if error != nil {
+                        print("Failed to delete message in receiver pool:", error!)
+                        return
+                    }
+                })
+                
+            }
+        }
     }
     
     // MARK: - Private Functions
@@ -85,7 +148,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         let toId = user!.id!
         let fromId = FIRAuth.auth()?.currentUser?.uid
         let timestamp: Int = Int(NSDate().timeIntervalSince1970)
-        var values: [String: AnyObject] = ["toId": toId as AnyObject, "fromId": fromId as AnyObject, "timestamp": timestamp as AnyObject]
+        var values: [String: AnyObject] = ["id": messageRef.key as AnyObject, "toId": toId as AnyObject, "fromId": fromId as AnyObject, "timestamp": timestamp as AnyObject]
         
         properties.forEach({ values[$0] = $1})
         
@@ -116,6 +179,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         if let profileImageUrl = self.user?.profileImageUrl {
             cell.profileImageView.loadImageUsingCacheWith(urlString: profileImageUrl)
         }
+        cell.timeBombView.isHidden = false
         if message.fromId == FIRAuth.auth()?.currentUser?.uid {
             cell.profileImageView.isHidden = true
             cell.bubbleView.backgroundColor = ChatMessageCell.Moss
@@ -145,28 +209,33 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ChatMessageCell
-        let message = messages[indexPath.row]
-        cell.message = message
-        
-        cell.chatLogController = self
-        setupCell(cell: cell, message: message)
-        
-        if let text = message.text {
-            cell.textView.text = text
-            cell.bubbleViewWidthAnchor?.constant = estimateFrame(forText: text).width + 32
+        let key = Array(messages.keys)[indexPath.row]
+        if let message = messages[key] {
+            cell.message = message
+            
+            cell.chatLogController = self
+            setupCell(cell: cell, message: message)
+            
+            if let text = message.text {
+                cell.textView.text = text
+                cell.bubbleViewWidthAnchor?.constant = estimateFrame(forText: text).width + 32
+            }
         }
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         var height: CGFloat = 80
-        let message = messages[indexPath.row]
         
-        if let text = message.text {
-            height = estimateFrame(forText: text).height + 20
+        let key = Array(messages.keys)[indexPath.row]
+        if let message = messages[key] {
+            if let text = message.text {
+                height = estimateFrame(forText: text).height + 20
+            }
+
         }
+        
         
         let width = UIScreen.main.bounds.width
         

@@ -24,6 +24,7 @@ class MessagesController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "newMessage"), style: .plain, target: self, action: #selector(handleNewMessage))
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
+        tableView.allowsMultipleSelectionDuringEditing = true
         checkIfUserIsLoggedIn()
     }
     
@@ -73,7 +74,9 @@ class MessagesController: UITableViewController {
     }
     
     func setupNavBarWithUser(user: User) {
-        
+        // Empty the old messages to prevent any previous log in data from being shown
+        messagesDictionary = [String: Message]()
+        self.tableView.reloadData()
         // load messages
         observeUserMessages()
         
@@ -136,7 +139,10 @@ class MessagesController: UITableViewController {
         present(navigationController, animated: true, completion: nil)
     }
 
+    // Any changes that occur to the database are observed when the view gets loaded and the messages
+    // are updated accordingly
     func observeUserMessages() {
+        
         guard let uid = FIRAuth.auth()?.currentUser?.uid else {
             return
         }
@@ -151,6 +157,11 @@ class MessagesController: UITableViewController {
                 self.fetchMessageWith(messageId: messageId)
             })
             
+        })
+        
+        currentUserMessages.observe(.childRemoved, with: { (snapshot) in
+            self.messagesDictionary.removeValue(forKey: snapshot.key)
+            self.attemptReloadOfTable()
         })
         
     }
@@ -212,10 +223,6 @@ class MessagesController: UITableViewController {
         })
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
@@ -229,6 +236,31 @@ class MessagesController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 72
+    }
+    
+    // The two following methods, along with setting allowsMultipleSelection to true, handles deletion
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
+            return
+        }
+        let message = self.messages[indexPath.row]
+        
+        if let chatPartnerId = message.chatPartnerId() {
+            FIRDatabase.database().reference().child("user-messages").child(uid).child(chatPartnerId).removeValue(completionBlock: { (error, ref) in
+                
+                if error != nil {
+                    print("Failed to delete message:", error!)
+                    return
+                }
+                self.messagesDictionary.removeValue(forKey: chatPartnerId)
+                self.attemptReloadOfTable()
+                
+            })
+        }
     }
 }
 

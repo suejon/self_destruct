@@ -30,7 +30,6 @@ class NewMessageController: UITableViewController {
     func fetchUsers() {
         // Fetch all users from Firebase and fill the users array
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
-            print(snapshot)
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let user = User()
                 user.name = dictionary["name"] as? String

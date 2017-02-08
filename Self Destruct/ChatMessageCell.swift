@@ -55,6 +55,7 @@ class ChatMessageCell: UICollectionViewCell {
     let activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.hidesWhenStopped = true
         return indicator
     }()
     
@@ -116,8 +117,8 @@ class ChatMessageCell: UICollectionViewCell {
     }
     
     func beginTimer() {
-        timeBombView.isHidden = true
-        self.activityIndicator.startAnimating()
-        print("Begin timer")
+        chatLogController?.beginTimer(messageCell: self)
+//        timeBombView.isHidden = true
+//        self.activityIndicator.startAnimating()
     }
 }

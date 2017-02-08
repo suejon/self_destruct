@@ -14,8 +14,6 @@ class UserCell: UITableViewCell {
     // MARK: - Properties
     var message: Message? {
         didSet {
-            self.detailTextLabel?.text = message?.text
-            
             if let seconds = message?.timestamp?.doubleValue {
                 timeLabel.text = formatDate(seconds: seconds)
             }
@@ -88,7 +86,7 @@ class UserCell: UITableViewCell {
     private func formatDate(seconds: Double) -> String {
 //        let date = NSDate(timeIntervalSince1970: date)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm a"
+        dateFormatter.dateFormat = "HH:mm"
         let date = dateFormatter.string(from: Date(timeIntervalSince1970: seconds))
         return date
     }
