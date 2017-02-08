@@ -18,8 +18,8 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         }
     }
     
-//    var messages = [Message]()
     var messages = [String: Message]()
+    var messageKeys = [String]()
     let cellId = "cellId"
     
     override func viewDidLoad(){
@@ -72,6 +72,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
                 let message = Message(dictionary: dictionary)
                 if let msgId = message.id {
                     self.messages[msgId] = message
+                    self.messageKeys.append(msgId)
                 }
                 
                 DispatchQueue.main.async {
@@ -84,11 +85,9 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         
         userMessagesRef.observe(.childRemoved, with: { (snapshot) in
             self.messages.removeValue(forKey: snapshot.key)
-//            for i in 0..<self.messages.count {
-//                if self.messages[i].id == snapshot.key {
-//                    self.messages.remove(at: i)
-//                }
-//            }
+            if let index = self.messageKeys.index(of: snapshot.key) {
+                self.messageKeys.remove(at: index)
+            }
             self.collectionView?.reloadData()
         })
     }
@@ -112,11 +111,10 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
                         return
                     }
                     self.messages.removeValue(forKey: message.id!)
-//                    for i in 0..<self.messages.count {
-//                        if self.messages[i].id == message.id {
-//                            self.messages.remove(at: i)
-//                        }
-//                    }
+                    if let index = self.messageKeys.index(of: message.id!) {
+                        self.messageKeys.remove(at: index)
+                    }
+
                     self.collectionView?.reloadData()
                 })
                 let userMessagesRef = FIRDatabase.database().reference().child("user-messages")
@@ -209,7 +207,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ChatMessageCell
-        let key = Array(messages.keys)[indexPath.row]
+        let key = messageKeys[indexPath.row]
         if let message = messages[key] {
             cell.message = message
             
@@ -228,7 +226,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
         
         var height: CGFloat = 80
         
-        let key = Array(messages.keys)[indexPath.row]
+        let key = messageKeys[indexPath.row]
         if let message = messages[key] {
             if let text = message.text {
                 height = estimateFrame(forText: text).height + 20
