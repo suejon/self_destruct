@@ -84,7 +84,7 @@ class MessagesController: UITableViewController {
             let imageview = UIImageView()
             imageview.contentMode = .scaleAspectFit
             imageview.translatesAutoresizingMaskIntoConstraints = false
-            imageview.layer.cornerRadius = 20
+            imageview.layer.cornerRadius = 15
             imageview.clipsToBounds = true
             if let profileImageUrl = user.profileImageUrl {
                 imageview.loadImageUsingCacheWith(urlString: profileImageUrl)

@@ -195,9 +195,7 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
             
             cell.bubbleViewLeftAnchor?.isActive = true
             cell.activityIndicatorLeftAnchor?.isActive = true
-            
         }
-        
     }
     
     // MARK: - collectionView functions
