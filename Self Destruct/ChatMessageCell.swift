@@ -74,6 +74,7 @@ class ChatMessageCell: UICollectionViewCell {
         addSubview(timeBombView)
         addSubview(activityIndicator)
         
+        
         // Constraints
         
         bubbleView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
@@ -103,12 +104,11 @@ class ChatMessageCell: UICollectionViewCell {
         timeBombView.topAnchor.constraint(equalTo: bubbleView.topAnchor).isActive = true
         timeBombView.bottomAnchor.constraint(equalTo: bubbleView.bottomAnchor).isActive = true
         
-        activityIndicator.widthAnchor.constraint(equalToConstant: 50).isActive = true
         activityIndicator.heightAnchor.constraint(equalToConstant: 50).isActive = true
         activityIndicator.centerYAnchor.constraint(equalTo: bubbleView.centerYAnchor).isActive = true
 
-        activityIndicatorLeftAnchor = activityIndicator.leftAnchor.constraint(equalTo: bubbleView.rightAnchor)
-        activityIndicatorRightAnchor = activityIndicator.rightAnchor.constraint(equalTo: bubbleView.leftAnchor)
+        activityIndicatorLeftAnchor = activityIndicator.leftAnchor.constraint(equalTo: bubbleView.rightAnchor, constant: 8)
+        activityIndicatorRightAnchor = activityIndicator.rightAnchor.constraint(equalTo: bubbleView.leftAnchor, constant: -8)
         
     }
     

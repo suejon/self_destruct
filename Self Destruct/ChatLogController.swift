@@ -68,7 +68,6 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
                     return
                 }
                 
-//                self.messages.append(Message(dictionary: dictionary))
                 let message = Message(dictionary: dictionary)
                 if let msgId = message.id {
                     self.messages[msgId] = message
@@ -182,20 +181,21 @@ class ChatLogController: UICollectionViewController, UICollectionViewDelegateFlo
             cell.profileImageView.isHidden = true
             cell.bubbleView.backgroundColor = ChatMessageCell.Moss
             cell.textView.textColor = .white
-            cell.bubbleViewRightAnchor?.isActive = true
             cell.bubbleViewLeftAnchor?.isActive = false
-            
             cell.activityIndicatorLeftAnchor?.isActive = false
+            
+            cell.bubbleViewRightAnchor?.isActive = true
             cell.activityIndicatorRightAnchor?.isActive = true
         } else {
             cell.profileImageView.isHidden = false
             cell.bubbleView.backgroundColor = .lightGray
             cell.textView.textColor = .black
             cell.bubbleViewRightAnchor?.isActive = false
-            cell.bubbleViewLeftAnchor?.isActive = true
-            
-            cell.activityIndicatorLeftAnchor?.isActive = true
             cell.activityIndicatorRightAnchor?.isActive = false
+            
+            cell.bubbleViewLeftAnchor?.isActive = true
+            cell.activityIndicatorLeftAnchor?.isActive = true
+            
         }
         
     }
